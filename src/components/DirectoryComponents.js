@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 class Directory extends Component {
     constructor(props) {
-        super(props);
-        this.state = {
+        super(props); // use this we don't need to add this.props
+        this.state = {// state is a react property which always hold an object in this case is array of object(used to represent the data). this.state store the data 
             campsites: [
                 {
                     id: 0,
@@ -35,24 +35,45 @@ class Directory extends Component {
                 }
             ],
         };
-    }
-    render() {
-        const directory = this.state.campsites.map(campsite => {
-            return (
-                <div key={campsite.id} className="col">
-                    <img src={campsite.image} alt = {campsite.name} />
+    }e
+    render() {// in react we need to return react elements, we ned to use a special method called render 
+        const directory = this.state.campsites.map(campsite => { // this variable contains array of elements. If we pull the array. If will pull up everything. We need to make specification from each photo
+            return (//we need to give a key to JSX 
+                <div key={campsite.id} className="col"> 
+                    <img src={campsite.image} alt={campsite.name} />
                     <h2>{campsite.name}</h2>
                     <p>{campsite.description}</p>
                 </div>
             )
         })
-        return (
-        <div className= "container">
-            <div className= "row">
-                {directory}
+        return (//in JSX {directory} to call the variable we need to use curly braces around the variable name
+            <div className="container">
+                <div className="row">
+                    {directory}
+                </div>
+                {/* <ExampleParentComponent /> */}
             </div>
-        </div>
         );
     }
 }
+
+/* example of parent-child component; the outcome is 333 hello world. we render the class in the Directory class. 
+class ExampleParentComponent extends Component{
+    constructor (props){
+     super(props);
+     this.state = {
+         number:333
+     }
+    }
+    render(){
+    return <ExampleChildComponent number = {this.state.number} greeting = "Hello World"/>;
+    }
+}
+class ExampleChildComponent extends Component {
+    render(){
+    return <div>{this.props.number} {this.props.greeting}</div>
+    }
+}
+*/ 
+
 export default Directory;
