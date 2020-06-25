@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
-//3. create three functions for each part as there are three render methods. 
+
 
 function RenderCampsite({campsite}) { //
     return (<div className="col-md-5 m-1">
