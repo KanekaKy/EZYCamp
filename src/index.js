@@ -2,10 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import 'typeface-lobster';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'typeface-lobster';//10.font and app import have to be under service worker
 import 'typeface-open-sans';
+import 'font-awesome/css/font-awesome.css';
+import 'bootstrap-social/bootstrap-social.css';
 import App from './App';
-
 
 ReactDOM.render(
   <React.StrictMode>
