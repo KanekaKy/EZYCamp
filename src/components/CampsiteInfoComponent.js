@@ -37,7 +37,6 @@ function CampsiteInfo(props){
                 </div>
             </div>
         );
-
     }
     return <div />;
 }
