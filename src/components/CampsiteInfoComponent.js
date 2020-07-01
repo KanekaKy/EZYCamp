@@ -29,7 +29,7 @@ function RenderComments({comments}) {
 
 function CampsiteInfo(props){
     if (props.campsite) {
-        return ( //8
+        return ( 
             <div className='container'>
                 <div className="row">
                     <RenderCampsite campsite= {props.campsite} />

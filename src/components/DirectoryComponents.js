@@ -1,9 +1,9 @@
 import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
-import { Link } from 'react-router-dom'; //1
+import { Link } from 'react-router-dom'; 
 
 function RenderDirectoryItem({ campsite }) {
-    return (//2
+    return (
         <Card>
             <Link to={`/directory/${campsite.id}`}> 
                 <CardImg width="100%" src={campsite.image} alt={campsite.name} />
