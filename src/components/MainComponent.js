@@ -1,14 +1,4 @@
-/*1. create a file called contactus component and create a function 
-2.  in main component, create a route for contact us. . we don't need to use the state data so we don't need render syntax like directory
-3. download three files to the shared folder. Each file has an object featurd that is set to property true
-4. Import contactus compoenent, partners, comments, promotion to main component. Then add them into this.state.
-5. in variable homepage, we pass three props: campsite, promotion and partner. We use the filter message to retrieve the data. Featured is a property. The one with value true will be returned. We return only one index. So, we use [0]
-6. Arrow function inherit this from the parent scope. That's why we use it instead of function in hompage. 
-7. In HomeComponent, create a function called RenderCard with item as param. 
-8. In this function, we create a card element which has card image, card title, card text
-9. In Function Home, we pass the render RenderCard function and info we want from each file with featured as true in shared folder. 
-}
-*/
+
 import React, { Component } from 'react';
 import Directory from './DirectoryComponents';
 import { CAMPSITES } from '../shared/campsites';
