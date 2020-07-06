@@ -1,19 +1,3 @@
-/*ContactComponent
-1. Convert from function to class. Add constructor and passing props and use super props
-2. Initialize this.state property related to the form: firstName, LastName,etc...
-3. then set up two class methods: 
-4. HandleInputChange method: created to handle input change. with event as the param. create a few variables within. 
-5. const target = event.target and const name = target.name are created to make it easy to reference to the property even.target and target.name. 
-6. const value = target.type === 'checkbox' ? target.checked : target.value; //if the type of form element that triggers this event is a checkbox, then get the value from agree which can be true or false. If not a checkbox, get the value from the target value(input by user).
-7. Put HandleInputChange method method inside the constructor using the bind method to use this keyword
-8. Create handleSubmit(event): create this method to log currentstate to the console. Using json.Stringify is needed before console expects string. We also add an alert. 
-9.When we submit the form, it usually refreshes the whole page, so we use event.preventDefault([name]:value);  to prevent the page from refreshing when users click submit. 
-10. Bind the handleSubmit in the constructor using bind method. 
-11. Add render and paste the form the excercise. 
-12. <div className="col-md-10" is equal to <Col md={10}. 
-13.<Col md={{ size: 4, offset: 2 }}> is equal <div class=" col-md-4 offset-md-2"
-*/
-
 import React, { Component } from 'react';
 import { Breadcrumb, BreadcrumbItem, Button, Form, FormGroup, Label, Input, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
