@@ -8,7 +8,7 @@ import About from './AboutComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CampsiteInfo from './CampsiteInfoComponent';
-import { addComment } from '../redux/ActionCreators'; //14
+import { addComment } from '../redux/ActionCreators';
 
 
 const mapStateToProps = state => {
@@ -43,7 +43,7 @@ class Main extends Component {
                         +match.params.campsiteId)[0]}
                     comments={this.props.comments.filter(comment => comment.campsiteId ===
                         +match.params.campsiteId)}
-                    addComment={this.props.addComment} //17
+                    addComment={this.props.addComment}
                 />
             );
         };
@@ -65,4 +65,4 @@ class Main extends Component {
     }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));//16
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

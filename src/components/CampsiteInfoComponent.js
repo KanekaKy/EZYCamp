@@ -22,7 +22,7 @@ class CommentForm extends Component {
     }
     handleSubmit(values) {
         this.toggleModal();
-        this.props.addComment(this.props.campsiteId, values.rating, values.author, values.text);//20,21,22,23
+        this.props.addComment(this.props.campsiteId, values.rating, values.author, values.text);
     }
     render() {
         return (
@@ -122,7 +122,7 @@ function CampsiteInfo(props) {
                     <RenderCampsite campsite={props.campsite} />
                     <RenderComments
                         comments={props.comments}
-                        addComment={props.addComment} //18
+                        addComment={props.addComment}
                         campsiteId={props.campsite.id}
                     />
                 </div>
