@@ -1,9 +1,8 @@
-//1--7
 import { COMMENTS } from "../shared/comments";
 
 export const Comments = (state = COMMENTS, action) => {
-    switch (action.type){
+    switch (action.type) {
         default:
-            return state; 
+            return state;
     }
 };

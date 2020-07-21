@@ -1,9 +1,8 @@
-//1--7
 import { CAMPSITES } from "../shared/campsites";
 
 export const Campsites = (state = CAMPSITES, action) => {
-    switch (action.type){
+    switch (action.type) {
         default:
-            return state; 
+            return state;
     }
 };
