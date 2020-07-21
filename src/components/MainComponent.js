@@ -8,14 +8,19 @@ import About from './AboutComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CampsiteInfo from './CampsiteInfoComponent';
+import { addComment } from '../redux/ActionCreators'; //14
 
-const mapStateToProps = state => { //13
+
+const mapStateToProps = state => {
     return {
         campsites: state.campsites,
         comments: state.comments,
         partners: state.partners,
         promotions: state.promotions
     };
+};
+const mapDispatchToProps = {//15
+    addComment: (campsiteId, rating, author, text) => (addComment(campsiteId, rating, author, text))
 };
 class Main extends Component {
 
@@ -33,8 +38,13 @@ class Main extends Component {
 
         const CampsiteWithId = ({ match }) => {
             return (
-                <CampsiteInfo campsite={this.props.campsites.filter(campsite => campsite.id === +match.params.campsiteId)[0]}
-                    comments={this.props.comments.filter(comment => comment.campsiteId === +match.params.campsiteId)} />
+                <CampsiteInfo
+                    campsite={this.props.campsites.filter(campsite => campsite.id ===
+                        +match.params.campsiteId)[0]}
+                    comments={this.props.comments.filter(comment => comment.campsiteId ===
+                        +match.params.campsiteId)}
+                    addComment={this.props.addComment} //17
+                />
             );
         };
 
@@ -55,4 +65,4 @@ class Main extends Component {
     }
 }
 
-export default withRouter(connect(mapStateToProps)(Main));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));//16

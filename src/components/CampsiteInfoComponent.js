@@ -21,8 +21,8 @@ class CommentForm extends Component {
         });
     }
     handleSubmit(values) {
-        console.log("Current state is: " + JSON.stringify(values));
-        alert("Current state is:" + JSON.stringify(values));
+        this.toggleModal();
+        this.props.addComment(this.props.campsiteId, values.rating, values.author, values.text);//20,21,22,23
     }
     render() {
         return (
@@ -52,17 +52,17 @@ class CommentForm extends Component {
                                     validators={{
                                         minLength: minLength(2),
                                         maxLength: maxLength(15)
-                                    }} 
-                                    />
-                                      <Errors
-                                        className="text-danger"
-                                        model=".author"
-                                        component="div"
-                                        messages={{
-                                            minLength: "Must be at least 2 characters",
-                                            maxLength: "Must be 15 characters or less"
-                                        }}
-                                    />
+                                    }}
+                                />
+                                <Errors
+                                    className="text-danger"
+                                    model=".author"
+                                    component="div"
+                                    messages={{
+                                        minLength: "Must be at least 2 characters",
+                                        maxLength: "Must be 15 characters or less"
+                                    }}
+                                />
                             </div>
                             <Label htmlFor="text" >Comment</Label>
                             <div className="form-group">
@@ -91,13 +91,13 @@ function RenderCampsite({ campsite }) {
     );
 }
 
-function RenderComments({ comments }) {
+function RenderComments({ comments, addComment, campsiteId }) {//19
     if (comments) {
-        return (
+        return (//20
             <div className="col-md-5 m-1">
                 <h4> Comments</h4>
                 {comments.map(comment => <div key={comment.id}> {comment.text} <p> -- {comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(comment.date)))}</p> </div>)}
-                <CommentForm />
+                <CommentForm campsiteId={campsiteId} addComment={addComment} />
             </div>
         );
     }
@@ -120,7 +120,11 @@ function CampsiteInfo(props) {
                 </div>
                 <div className="row">
                     <RenderCampsite campsite={props.campsite} />
-                    <RenderComments comments={props.comments} />
+                    <RenderComments
+                        comments={props.comments}
+                        addComment={props.addComment} //18
+                        campsiteId={props.campsite.id}
+                    />
                 </div>
             </div>
         );
