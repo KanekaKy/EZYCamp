@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody, Label } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import { Loading } from './LoadingComponent';
 
 const maxLength = len => val => !val || (val.length <= len);
 const minLength = len => val => val && (val.length >= len);
@@ -93,7 +94,7 @@ function RenderCampsite({ campsite }) {
 
 function RenderComments({ comments, addComment, campsiteId }) {//19
     if (comments) {
-        return (//20
+        return (
             <div className="col-md-5 m-1">
                 <h4> Comments</h4>
                 {comments.map(comment => <div key={comment.id}> {comment.text} <p> -- {comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(comment.date)))}</p> </div>)}
@@ -105,6 +106,26 @@ function RenderComments({ comments, addComment, campsiteId }) {//19
 }
 
 function CampsiteInfo(props) {
+    if (props.isLoading) {//39
+        return (
+            <div className="container">
+                <div className='row'>
+                    <Loading />
+                </div>
+            </div>
+        );
+    }
+    if (props.errMess) {//40
+        return (
+            <div className="container">
+                <div className='row'>
+                    <div className='col'>
+                        <h4> {props.errMess} </h4>
+                    </div>
+                </div>
+            </div>
+        );
+    }
     if (props.campsite) {
         return (
             <div className='container'>

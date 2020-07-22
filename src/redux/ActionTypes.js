@@ -1,1 +1,5 @@
 export const ADD_COMMENT = 'ADD_COMMENT';
+//5
+export const CAMPSITES_LOADING = 'CAMPSITES_LOADING';//5
+export const CAMPSITES_FAILED = 'CAMPSITES_FAILED';//7
+export const ADD_CAMPSITES = 'ADD_CAMPSITES'; //8
