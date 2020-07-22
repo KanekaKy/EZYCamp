@@ -1,12 +1,12 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
-import { Loading } from './LoadingComponent';//34
+import { Loading } from './LoadingComponent';
 
-function RenderCard({item, isLoading, errMess}) { //35
-    if(isLoading){//36
+function RenderCard({item, isLoading, errMess}) { 
+    if(isLoading){
         return <Loading />;
     }
-    if (errMess){//37
+    if (errMess){
         return <h4>{errMess}</h4>
     }
     return (
@@ -31,7 +31,7 @@ function Home(props) {
                 <div className="col-md m-1">
                     <RenderCard 
                     item={props.campsite} 
-                    isLoading={props.campsitesLoading} //38
+                    isLoading={props.campsitesLoading} 
                     errMess= {props.campsitesErrMess}
                     />
                 </div>

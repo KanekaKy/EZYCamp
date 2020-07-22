@@ -8,7 +8,7 @@ import About from './AboutComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CampsiteInfo from './CampsiteInfoComponent';
-import { addComment, fetchCampsites } from '../redux/ActionCreators';//27
+import { addComment, fetchCampsites } from '../redux/ActionCreators';
 
 
 const mapStateToProps = state => {
@@ -21,11 +21,11 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = {
     addComment: (campsiteId, rating, author, text) => (addComment(campsiteId, rating, author, text)),
-    fetchCampsites: () => (fetchCampsites())//28
+    fetchCampsites: () => (fetchCampsites())
 };
 
 class Main extends Component {
-    componentDidMount() {//29,30
+    componentDidMount() {
         this.props.fetchCampsites();
     }
 
@@ -34,7 +34,7 @@ class Main extends Component {
         const HomePage = () => {
             return (
                 <Home
-                    campsite={this.props.campsites.campsites.filter(campsite => campsite.featured)[0]}//31,32
+                    campsite={this.props.campsites.campsites.filter(campsite => campsite.featured)[0]}
                     campsitesLoading={this.props.campsites.isLoading}
                     campsiteErrMess={this.props.campsites.errMess}
                     promotion={this.props.promotions.filter(promotion => promotion.featured)[0]}
@@ -46,7 +46,7 @@ class Main extends Component {
         const CampsiteWithId = ({ match }) => {
             return (
                 <CampsiteInfo
-                    campsite={this.props.campsites.campsites.filter(campsite => campsite.id === //33
+                    campsite={this.props.campsites.campsites.filter(campsite => campsite.id === 
                         +match.params.campsiteId)[0]}
                     isLoading={this.props.campsites.isLoading} 
                     errMess={this.props.campsites.errMess}

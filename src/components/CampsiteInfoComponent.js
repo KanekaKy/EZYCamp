@@ -106,7 +106,7 @@ function RenderComments({ comments, addComment, campsiteId }) {//19
 }
 
 function CampsiteInfo(props) {
-    if (props.isLoading) {//39
+    if (props.isLoading) {
         return (
             <div className="container">
                 <div className='row'>
@@ -115,7 +115,7 @@ function CampsiteInfo(props) {
             </div>
         );
     }
-    if (props.errMess) {//40
+    if (props.errMess) {
         return (
             <div className="container">
                 <div className='row'>

@@ -1,6 +1,5 @@
 
 import * as ActionTypes from "./ActionTypes";
-//9,10,11,12
 import { CAMPSITES } from "../shared/campsites";
 
 export const addComment = (campsiteId, rating, author, text) => ({
@@ -13,23 +12,23 @@ export const addComment = (campsiteId, rating, author, text) => ({
     }
 });
 
-export const fetchCampsites = () => dispatch => {//13
+export const fetchCampsites = () => dispatch => {
     dispatch(campsitesLoading());
-    setTimeout(() => {//14
+    setTimeout(() => {
         dispatch(addCampsites(CAMPSITES));
     }, 2000);
 };
 
-export const campsitesLoading = () => ({//15,16
+export const campsitesLoading = () => ({
     type: ActionTypes.CAMPSITES_LOADING
 });
 
-export const campsitesFailed = errMess => ({//17
+export const campsitesFailed = errMess => ({
     type: ActionTypes.CAMPSITES_FAILED,
     payload: errMess
 });
 
-export const addCampsites = campsites => ({//18
+export const addCampsites = campsites => ({
     type: ActionTypes.ADD_CAMPSITES,
     payload: campsites
 });
