@@ -1,5 +1,5 @@
 import * as ActionTypes from "./ActionTypes";
-import { baseUrl } from '../shared/baseUrl';//4
+import { baseUrl } from '../shared/baseUrl';
 
 export const addComment = (campsiteId, rating, author, text) => ({
     type: ActionTypes.ADD_COMMENT,
@@ -13,8 +13,8 @@ export const addComment = (campsiteId, rating, author, text) => ({
 
 export const fetchCampsites = () => dispatch => {
     dispatch(campsitesLoading());
-    return fetch(baseUrl + 'campsites') //5
-        .then(response => response.json())//6
+    return fetch(baseUrl + 'campsites')
+        .then(response => response.json())
         .then(campsites => dispatch(addCampsites(campsites)));
 };
 
@@ -32,7 +32,7 @@ export const addCampsites = campsites => ({
     payload: campsites
 });
 
-export const fetchComments = () => dispatch => { //7
+export const fetchComments = () => dispatch => {
     return fetch(baseUrl + 'comments')
         .then(response => response.json())
         .then(comments => dispatch(addComments(comments)));

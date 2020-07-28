@@ -1,11 +1,11 @@
-import * as ActionTypes from './ActionTypes';//14
+import * as ActionTypes from './ActionTypes';
 
-export const Promotions = (state = {//15
+export const Promotions = (state = {
     isLoading: true,
     errMess: null,
     promotions: []
 }, action) => {
-    switch (action.type) {//16
+    switch (action.type) {
         case ActionTypes.ADD_PROMOTIONS:
             return { ...state, isLoading: false, errMess: null, promotions: action.payload };
 
