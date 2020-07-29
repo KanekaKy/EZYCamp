@@ -7,7 +7,7 @@ import { baseUrl } from '../shared/baseUrl';
 
 const maxLength = len => val => !val || (val.length <= len);
 const minLength = len => val => val && (val.length >= len);
-//12
+
 class CommentForm extends Component {
     constructor(props) {
         super(props);

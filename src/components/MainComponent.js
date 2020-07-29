@@ -9,7 +9,7 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CampsiteInfo from './CampsiteInfoComponent';
 import { actions } from 'react-redux-form';
-import { postComment, fetchCampsites, fetchComments, fetchPromotions } from '../redux/ActionCreators';//11
+import { postComment, fetchCampsites, fetchComments, fetchPromotions } from '../redux/ActionCreators';
 
 
 const mapStateToProps = state => {
