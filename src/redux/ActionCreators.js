@@ -1,8 +1,3 @@
-/*Exercise: Fetch Handling Errors
-1. Add another then method to fetchCampsites with if statement, to handle  error. 
-2. Add catch to dispatch the error 
-3. Do the same to fetchComments and fetchPromotions 
-*/
 import * as ActionTypes from "./ActionTypes";
 import { baseUrl } from '../shared/baseUrl';
 
@@ -19,7 +14,7 @@ export const addComment = (campsiteId, rating, author, text) => ({
 export const fetchCampsites = () => dispatch => {
     dispatch(campsitesLoading());
     return fetch(baseUrl + 'campsites')
-        .then(response => { //1
+        .then(response => {
             if (response.ok) {
                 return response;
             } else {
@@ -35,7 +30,7 @@ export const fetchCampsites = () => dispatch => {
         )
         .then(response => response.json())
         .then(campsites => dispatch(addCampsites(campsites)))
-        .catch(error => dispatch(campsitesFailed(error.message)));//2
+        .catch(error => dispatch(campsitesFailed(error.message)));
 };
 
 export const campsitesLoading = () => ({
@@ -52,7 +47,7 @@ export const addCampsites = campsites => ({
     payload: campsites
 });
 
-export const fetchComments = () => dispatch => { //3
+export const fetchComments = () => dispatch => {
     return fetch(baseUrl + 'comments')
         .then(response => {
             if (response.ok) {
