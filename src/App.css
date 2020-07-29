@@ -1,20 +1,3 @@
-/* Exercise: React Transitions
-1. Install yarn react transition group library
-
-app.css
-2. adding css to app.css. CSS transition groups give us four classes we can use.  
-3. We need to give each class a base class name called page. 
-4. Create four classes: page-enter and page-enter-active describe transition what happens when you mount the component. Starting with opacity 0 to opacity 1 with transition 300ms. Ease out means the transition will start fast and decelerates as it reaches the end.    
-5. two more classes: page-exit and page-exit-active describe transition when the component is being unmounted. Starting with opacity 1 to opacity 0 and ease in at transition 300 ms, meaning it will start slow and accelerate at the end. 
-
-maincomponent.js
-6. import TransitionGroup & CSSTransition.
-7. Wrap route in TransitionGroup and CSSTransition
-8. CSSTransition requires a unique key because the react router require each key for each route. 
-9. Give a classNames, this wants with s because it is a special attribute comes with CSSTransition. Whatever classnames we give, it will look for that class name -enter or exit. 
-10. Add the default timeout in the CSSTransition as well
-*/
-
 body {
   font-family: "Open Sans", sans-serif;
 }
@@ -60,8 +43,6 @@ h2 {
 .navbar-dark {
   background-color: #901cad;
 }
-
-/* 1,2,3,4*/
 .page-enter {
   opacity: 0;
   transform: translateX(-100%);
